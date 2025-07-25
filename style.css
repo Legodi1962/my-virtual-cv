@@ -1,27 +1,28 @@
 .home {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* spread content and image */
-  padding: 0 10%;
-  height: 100vh;
-  background: url('home.jpg') no-repeat center center/cover;
-  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    height: 100vh;
+    background: url('home.jpg') no-repeat center center/cover;
+    position: relative;
 }
 
 .home-content {
-  max-width: 50%;
-  z-index: 101;
-  color: #ededed;
+    max-width: 50%;
+    z-index: 101;
 }
 
 .home-image {
-  max-width: 40%;
-  z-index: 101;
+    max-width: 40%;
+    z-index: 101;
 }
 
 .home-image img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #00abf0aa;
-  object-fit: cover;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00abf0aa;
+    object-fit: cover;
 }
+
+/* Keep your existing CSS below */
