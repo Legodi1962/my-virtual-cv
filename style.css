@@ -1,15 +1,72 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
-  color: #333;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+*::selection {
+    background: #00abf0;
+    color: #081b29;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* Hero Section (Profile top area) */
 .hero {
   text-align: center;
-  padding: 40px 20px 20px;
+  padding: 140px 20px 20px; /* extra top padding for fixed header */
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  color: #333;
 }
 
 .hero .profile-img {
@@ -18,57 +75,85 @@ body {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 20px;
+  border: 4px solid #0078d7;
 }
 
 .hero h1 {
   margin: 10px 0 5px;
-  font-size: 2em;
+  font-size: 2.5em;
   color: #004080;
+  font-weight: 700;
 }
 
 .tagline {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #555;
   margin-top: 5px;
   margin-bottom: 10px;
   font-weight: 500;
 }
 
-.hero .contact {
-  font-size: 0.95em;
-  color: #666;
+.tagline small a {
+  color: #0078d7;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  vertical-align: middle;
 }
 
+.tagline small a:hover {
+  text-decoration: underline;
+}
+
+.tagline small i {
+  margin-right: 4px;
+  vertical-align: middle;
+  color: #00abf0;
+}
+
+.hero .contact {
+  font-size: 1em;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* Content Sections */
 .section {
   max-width: 700px;
   margin: 30px auto;
   padding: 0 20px;
+  color: #333;
 }
 
 .section h2 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: #004080;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #ddd;
   padding-bottom: 8px;
+  font-weight: 700;
 }
 
 .section .item h3 {
-  font-size: 1.2em;
-  margin: 10px 0 5px;
+  font-size: 1.3em;
+  margin: 10px 0 8px;
   color: #003366;
+  font-weight: 600;
 }
 
 .skills-list {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
+  margin-bottom: 20px;
 }
 
 .skills-list li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-size: 1em;
 }
 
+/* Links */
 a {
   color: #0078d7;
   text-decoration: none;
@@ -78,25 +163,36 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Button */
 button {
   display: block;
-  margin: 20px auto;
-  padding: 12px 24px;
+  margin: 30px auto;
+  padding: 14px 28px;
   background-color: #0078d7;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #005fa3;
 }
 
+/* Message under button */
 #message {
   text-align: center;
   font-size: 1em;
   color: green;
-  margin-top: 12px;
+  margin-top: 16px;
+}
+
+/* Animations from your original */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
 }
