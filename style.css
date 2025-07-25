@@ -26,6 +26,14 @@ body {
   color: #004080;
 }
 
+.tagline {
+  font-size: 1.1em;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
 .hero .contact {
   font-size: 0.95em;
   color: #666;
