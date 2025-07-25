@@ -1,17 +1,29 @@
-// Smooth scrolling for navbar links
-document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+// Wait until DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
 
-// Alert on Hire Me button click
-document.querySelectorAll('.btn-box a[href="#contact"]').forEach(button => {
-  button.addEventListener('click', () => {
-    alert("Thanks for your interest! You can contact me via email or LinkedIn.");
+  // Smooth scroll for navbar links
+  const links = document.querySelectorAll('.navbar a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetID = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetID);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   });
+
+  // Example: Button click feedback (change text briefly)
+  const buttons = document.querySelectorAll('.btn-box a');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const originalText = button.textContent;
+      button.textContent = 'Thanks!';
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 1500);
+    });
+  });
+
 });
